@@ -2,24 +2,30 @@ print("***********************")
 print("adivinhacao")
 print("***********************")
 
-
-
 numero_secreto = 24
-acertou = numero_secreto == chute
-chute_maior = chute > numero_secreto
-chute_menor = chute < numero_secreto
+total_de_tentativas = 3
+rodada = 1
 
-chute = int(input("Digite o seu Número: "))
+while (rodada <= total_de_tentativas ):
+    print(f"tentativa (rodada) de {total_de_tentativas}")
+    chute = int(input("Digite o seu Número: "))
 
-print(f"Você digitou {chute}")
+    acertou = numero_secreto == chute
+    chute_maior = chute > numero_secreto
+    chute_menor = chute < numero_secreto
 
-if(acertou):
-    print("Você acertou!")
-else:
-    if(chute_maior):
-        print("você errou! Seu número foi maior que o numero secreto")
-    elif(chute_menor):
-        print("você errou! Seu número foi menor que o numero secreto")
+
+    print(f"Você digitou {chute}")
+
+    if(acertou):
+        print("Você acertou!")
+    else:
+        if(chute_maior):
+            print("você errou! Seu número foi maior que o numero secreto")
+        elif(chute_menor):
+            print("você errou! Seu número foi menor que o numero secreto")
+
+        rodada = rodada + 1
 
     print("@@@@@@@@@@@")
     print("fim de Jogo")
